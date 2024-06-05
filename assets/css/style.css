@@ -1,0 +1,131 @@
+:root {
+  --clr-primary-bright-orange: hsl(31, 77%, 52%);
+  --clr-primary-dark-cyan: hsl(184, 100%, 22%);
+  --clr-primary-very-dark: hsl(179, 100%, 13%);
+  --clr-neutral-transparent-white: hsl(0 0% 100% / 75%);
+  --clr-neutral-very-light-gray: hsl(0 0% 95%);
+  --fz-paragraph: 0.9375rem;
+  --ff-body: "Lexend Deca", sans-serif;
+  --ff-headings: "Big Shoulders Display", sans-serif;
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-body);
+  color: var(--clr-neutral-very-light-gray);
+  padding: 1.5rem;
+}
+
+img {
+  max-width: 100%
+}
+
+a {
+  text-decoration: none;
+}
+
+.three-column {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  border-radius: .8rem;
+  overflow: hidden;
+  max-width: 55rem;
+}
+
+.sedans, 
+.suvs,
+.luxury {
+  padding: 2.5rem;
+}
+
+.sedans {
+  background-color: var(--clr-primary-bright-orange);
+}
+
+.suvs {
+  background-color: var(--clr-primary-dark-cyan);
+}
+
+.luxury {
+  background-color: var(--clr-primary-very-dark);
+
+}
+
+.heading {
+  font-family: var(--ff-headings);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-block-start: .8rem;
+  margin-block-end: 0;
+}
+
+.paragraph {
+  line-height: 1.7;
+  color: var(--clr-neutral-transparent-white);
+  font-size: var(--fz-paragraph);
+  max-width: 28ch;
+  margin-block-end: 2.5rem;
+}
+
+.btn {
+  background-color: var(--clr-neutral-very-light-gray);
+  padding: .8rem 1.8rem;
+  border-radius: 1.5rem;
+  border: .15rem solid transparent;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border-color: var(--clr-neutral-very-light-gray);
+  color: var(--clr-neutral-transparent-white);
+}
+
+.btn--sedans {
+  color: var(--clr-primary-bright-orange);
+}
+
+.btn--suvs {
+  color: var(--clr-primary-dark-cyan);
+}
+
+.btn--luxury {
+  color: var(--clr-primary-very-dark);
+}
+
+@media (min-width: 48rem) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .three-column {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sedans, 
+  .suvs,
+  .luxury {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+  }
+}
